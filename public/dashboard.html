@@ -87,11 +87,11 @@
             let data = snapshot.val()
             console.log(data);
             console.log(data.length);
-            if(data){
-                todoIndex = data.length
-            } else {
-                todoIndex = 0
-            }
+            // if(data){
+            //     todoIndex = data.length
+            // } else {
+            //     todoIndex = 0
+            // }
             data.map((eachTodo)=>{
                 show.innerHTML += `
                                  <div class="alert alert-success shadow">
