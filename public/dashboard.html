@@ -67,7 +67,7 @@
             let todo = {
                 todoItem : messageInput.value,
                 time: date.toLocaleTimeString(),
-                username : user.displayName
+                username : auth.currentUser
             }
             set(dbRef, todo)
             console.log(todo);
