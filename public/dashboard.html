@@ -74,7 +74,7 @@
             console.log(todo);
         })
         
-        const todoRef =  ref(db, `allTodos`);
+        const todoRef =  ref(db, `allTodos${auth.currentUser.uid}`);
         onValue(todoRef , (snapshot) =>{
             show.innerHTML = ""
             let data = snapshot.val()
