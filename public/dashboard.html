@@ -11,7 +11,7 @@
 
 
     <input type="text" id="messageInput" class="form-control" > <button id="sendButton" class="btn btn-black">send</button>
-    <button id="signO">sign out</button>
+    <button id="signO" class="btn btn-black">sign out</button>
     <div id="show" class="show"></div>
       
     
@@ -87,9 +87,9 @@
             }
             data.map((eachTodo)=>{
                 show.innerHTML += `
-                                <h1>${eachTodo.todoItem}</h1>
-                                <i>${eachTodo.time}</i>                
-                                <p>${eachTodo.username}</p>
+                                 <h1>${eachTodo.todoItem}</h1>
+                                 <i>${eachTodo.time}</i>                
+                                 <p>${eachTodo.username}</p>
                         `
             })
             console.log(eachTodo);
