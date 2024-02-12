@@ -8,7 +8,7 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <button id="signO" class="btn btn-danger text-end">sign out</button>
+    <button id="signO" class="btn btn-danger float-end me-2">sign out</button>
 
    <div class="container col-lg-8 shadow">
     <div id="show" class="show container col-lg-8 "></div>
@@ -93,7 +93,7 @@
             data.map((eachTodo)=>{
                 show.innerHTML += `
                                  <div class="alert alert-success shadow row">
-                                    <h4 col>${eachTodo.todoItem}</h4>
+                                    <h5 class="col">${eachTodo.todoItem}</h5>
                                     <div class="col">
                                         <i class="fw-bold ms-1">${eachTodo.username}</i>
                                         <i>${eachTodo.time}</i>
