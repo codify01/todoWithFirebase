@@ -12,7 +12,7 @@
     width: 100% !important;
 }
 #show {
-    overflow-y: visible;
+    overflow-y: scroll;
     height: 90vh;
     background-color: gray;
 }
