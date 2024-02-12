@@ -62,7 +62,7 @@
         })
 
         sendButton.addEventListener('click', ()=> {
-            let dbRef = ref(db, `allTodos${auth.currentUser.uid}/${todoIndex}`)
+            let dbRef = ref(db, `allTodos/${todoIndex}`)
             let date = new Date()
             let todo = {
                 todoItem : messageInput.value,
@@ -74,7 +74,7 @@
             console.log(todo);
         })
         
-        const todoRef =  ref(db, `allTodos${auth.currentUser.uid}`);
+        const todoRef =  ref(db, `allTodos`);
         onValue(todoRef , (snapshot) =>{
             show.innerHTML = ""
             let data = snapshot.val()
