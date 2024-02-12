@@ -10,8 +10,8 @@
 <body>
 
 
-    <input type="text" id="messageInput" class="form-control" > <button id="sendButton" class="btn btn-black">send</button>
-    <button id="signO" class="btn btn-black">sign out</button>
+    <input type="text" id="messageInput" class="form-control" > <button id="sendButton" class="btn btn-warning">send</button>
+    <button id="signO" class="btn btn-success">sign out</button>
     <div id="show" class="show"></div>
       
     
@@ -72,6 +72,7 @@
             }
             set(dbRef, todo)
             console.log(todo);
+            massageInput.value = ""
         })
         
         const todoRef =  ref(db, `allTodos`);
