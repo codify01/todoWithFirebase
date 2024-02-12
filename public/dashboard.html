@@ -73,7 +73,7 @@
                 
             }
             set(dbRef, todo)
-            massageInput.value = ""
+            messageInput.value = ""
             console.log(todo);
         })
         
@@ -90,9 +90,11 @@
             }
             data.map((eachTodo)=>{
                 show.innerHTML += `
-                                 <h1>${eachTodo.todoItem}</h1>
-                                 <i>${eachTodo.time}</i>                
-                                 <p>${eachTodo.username}</p>
+                                 <div class="alert alert-success">
+                                    <h4>${eachTodo.todoItem}</h4>
+                                    <i>${eachTodo.time}</i>                
+                                    <p>${eachTodo.username}</p>
+                                </div>
                         `
             })
             console.log(eachTodo);
