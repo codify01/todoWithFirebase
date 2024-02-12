@@ -62,7 +62,7 @@
         })
 
         sendButton.addEventListener('click', ()=> {
-            let dbRef = ref(db, `allTodos${auth.currentUser.email}/${todoIndex}`)
+            let dbRef = ref(db, `allTodos${auth.currentUser.uid}/${todoIndex}`)
             let date = new Date()
             let todo = {
                 todoItem : messageInput.value,
