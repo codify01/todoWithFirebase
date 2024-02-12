@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <title>Dashboard</title>
+</head>
+<body>
+
+
+    <input type="text" id="messageInput" class="form-control" > <button id="sendButton" class="btn btn-black">send</button>
+    <button id="signO">sign out</button>
+    <div id="show" class="show"></div>
+      
+    
+
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth,onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+        
+    
+        // firebase configurations
+    
+        const firebaseConfig = {
+          apiKey: "AIzaSyBuW5nIpwYvsAdvRE9h3d2phwohjkRV0SM",
+          authDomain: "todo-app-1eb73.firebaseapp.com",
+          projectId: "todo-app-1eb73",
+          storageBucket: "todo-app-1eb73.appspot.com",
+          databaseURL: "https://todo-app-1eb73-default-rtdb.firebaseio.com",
+          messagingSenderId: "1070314210549",
+          appId: "1:1070314210549:web:d9e87533e685b00d85f1bc"
+        };
+      
+        // Initialize Firebase
+
+        const app = initializeApp(firebaseConfig); 
+        const auth = getAuth();
+        const db = getDatabase();
+        let todoIndex = 0
+    
+        // functions 
+        onAuthStateChanged(auth, (user)=> {
+            if(user) {
+                // window.location.href = "dashboard.html"
+                console.log(user);
+            }else {
+                window.location.href = "signup.html"
+            }
+        })
+    
+        signO.addEventListener('click', ()=> {
+            signOut(auth).then(() => {
+            }).catch((error) => {
+            // An error happened.
+            });
+
+        })
+
+        sendButton.addEventListener('click', ()=> {
+            let dbRef = ref(db, `allTodos/${todoIndex}`)
+            let date = new Date()
+            let todo = {
+                todoItem : messageInput.value,
+                time: date.toLocaleTimeString()
+            }
+            set(dbRef, todo)
+            console.log(todo);
+        })
+        
+        const todoRef =  ref(db, 'allTodos');
+        onValue(todoRef , (snapshot) =>{
+            show.innerHTML = ""
+            let data = snapshot.val()
+            console.log(data);
+            console.log(data.length);
+            if(data){
+                todoIndex = data.length
+            } else {
+                todoIndex = 0
+            }
+            data.map((eachTodo)=>{
+                show.innerHTML += `
+                        <h1>${eachTodo.todoItem}</h1>
+                        <i>${eachTodo.time}</i>
+                        
+                `
+            })
+        })
+      </script>
+</body>
+</html>
