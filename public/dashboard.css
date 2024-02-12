@@ -9,9 +9,10 @@
     top: 0px;
     right: 10px;
     z-index: 1;
+    width: 100% !important;
 }
 #show {
-    overflow-y: scroll;
+    overflow-y: visible;
     height: 90vh;
     background-color: gray;
 }
