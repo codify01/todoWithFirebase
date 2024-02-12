@@ -12,8 +12,10 @@
 
    <div class="container col-lg-8 shadow">
     <div id="show" class="show container col-lg-8 "></div>
-    <input type="text" id="messageInput" class="form-control w-75" placeholder="Type in something"/> 
-    <button id="sendButton" class="btn btn-warning">send</button>
+    <div class="row">
+        <input type="text" id="messageInput" class="form-control w-75" placeholder="Type in something"/> 
+        <button id="sendButton" class="btn btn-warning">send</button>
+    </div>
    </div>
       
     
@@ -90,9 +92,9 @@
             }
             data.map((eachTodo)=>{
                 show.innerHTML += `
-                                 <div class="alert alert-success shadow">
-                                    <h4>${eachTodo.todoItem}</h4>
-                                    <div class="float-end">
+                                 <div class="alert alert-success shadow row">
+                                    <h4 col>${eachTodo.todoItem}</h4>
+                                    <div class="col">
                                         <i class="fw-bold ms-1">${eachTodo.username}</i>
                                         <i>${eachTodo.time}</i>
                                     </div>                
