@@ -13,4 +13,5 @@
 #show {
     overflow-y: scroll;
     height: 90vh;
+    background-color: gray;
 }
