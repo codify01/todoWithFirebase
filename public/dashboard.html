@@ -13,8 +13,7 @@
     <div id="show" class="show container col-8"></div>
     <div class="form-floating mb-3">
         <input type="text" class="form-control" id="messageInput" placeholder="Type in something">
-        <label for="messageInput">Email address</label>
-      </div>
+    </div>
     <!-- <input type="text" id="messageInput" class="form-control col-8" placeholder="Type in something" />  -->
     <button id="sendButton" class="btn btn-warning col-4">send</button>
     <button id="signO" class="btn btn-danger">sign out</button>
@@ -78,7 +77,7 @@
             }
             set(dbRef, todo)
             console.log(todo);
-            massageInput.value = ""
+            massageInput.value = " "
         })
         
         const todoRef =  ref(db, `allTodos`);
