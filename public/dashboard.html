@@ -68,6 +68,7 @@
                 todoItem : messageInput.value,
                 time: date.toLocaleTimeString(),
                 username : auth.currentUser.displayName
+                
             }
             set(dbRef, todo)
             console.log(todo);
@@ -86,9 +87,10 @@
             }
             data.map((eachTodo)=>{
                 show.innerHTML += `
-                        <p>${eachTodo.username}</p>
-                        <h1>${eachTodo.todoItem}</h1>
-                        <i>${eachTodo.time}</i>                `
+                                <h1>${eachTodo.todoItem}</h1>
+                                <i>${eachTodo.time}</i>                
+                                <p>${eachTodo.username}</p>
+                        `
             })
             console.log(eachTodo);
         })
