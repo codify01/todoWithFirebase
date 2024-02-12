@@ -2,5 +2,10 @@
     position: fixed;
     bottom: 2px;
     width: 100% !important;
-    
+
+}
+#signO {
+    position: fixed;
+    top: 0px;
+    right: 10px;
 }
